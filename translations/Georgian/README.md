@@ -6,7 +6,7 @@
 ## <a name='TOC'>Table of Contents</a>
 
   1. [ტიპები](#types)
-  1. [Objects](#objects)
+  1. [ობიექტები](#objects)
   1. [Arrays](#arrays)
   1. [Strings](#strings)
   1. [Functions](#functions)
@@ -71,48 +71,48 @@
 
     **[[⬆]](#TOC)**
 
-## <a name='objects'>Objects</a>
+## <a name='objects'>ობიექტები</a>
 
-  - Use the literal syntax for object creation.
+  - ობიექტების შესაქმნელად გამოიყენეთ ფიგურული ფრჩხილები. ნუ შექმნით ობიექტს კონსტრუქტორით
 
     ```javascript
-    // bad
+    // ცუდია
     var item = new Object();
 
-    // good
+    // კარგია
     var item = {};
     ```
 
-  - Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61)
+  - არ გამოიყენოთ [რეზერვილებული სიტყვები](http://es5.github.io/#x7.6.1) as keys. არ იმუშავებს IE8. [დამატებითი ინფორმაცია](https://github.com/airbnb/javascript/issues/61)
 
     ```javascript
-    // bad
+    // ცუდია
     var superman = {
       default: { clark: 'kent' },
       private: true
     };
 
-    // good
+    // კარგია
     var superman = {
       defaults: { clark: 'kent' },
       hidden: true
     };
     ```
 
-  - Use readable synonyms in place of reserved words.
+  - გამოიყენეთ შესაბამისი სინონიმები საკვანძო სიტყვების ნაცვლად.
 
     ```javascript
-    // bad
+    // ცუდია
     var superman = {
       class: 'alien'
     };
 
-    // bad
+    // ცუდია
     var superman = {
       klass: 'alien'
     };
 
-    // good
+    // კარგია
     var superman = {
       type: 'alien'
     };
