@@ -5,7 +5,7 @@
 
 ## <a name='TOC'>Table of Contents</a>
 
-  1. [Types](#types)
+  1. [ტიპები](#types)
   1. [Objects](#objects)
   1. [Arrays](#arrays)
   1. [Strings](#strings)
@@ -36,9 +36,9 @@
   1. [Contributors](#contributors)
   1. [License](#license)
 
-## <a name='types'>Types</a>
+## <a name='types'>ტიპები</a>
 
-  - **Primitives**: When you access a primitive type you work directly on its value
+  - **პრიმიტევები**: როდესაც თქვენ  მუშაობთ პრიმიტივებთან (მარტივ ტიპებთან) თქვენ ცვით მის მნისვნელობას უშუალოდ მეხსიერებაში 
 
     + `string`
     + `number`
@@ -52,9 +52,9 @@
 
     bar = 9;
 
-    console.log(foo, bar); // => 1, 9
+    console.log(foo, bar); // => 1, 9 აქ რჩება უცვლელი 
     ```
-  - **Complex**: When you access a complex type you work on a reference to its value
+  - **კომპლექსური**: როდესაც თქვენ  მუშაობთ კომპლექსურ (რთულ ტიპებთან) თქვენ ურღთიერთობთ მის მიმათითებელზე მეხსიერებაში
 
     + `object`
     + `array`
