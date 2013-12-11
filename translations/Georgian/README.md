@@ -1,9 +1,9 @@
 # Airbnb JavaScript Style Guide() {
 
-*A mostly reasonable approach to JavaScript*
+*JavaScript-ისადმი სასურველი და გონივრული მიდგონა*
 
 
-## <a name='TOC'>Table of Contents</a>
+## <a name='TOC'>სარჩევი</a>
 
   1. [ტიპები](#types)
   1. [ობიექტები](#objects)
