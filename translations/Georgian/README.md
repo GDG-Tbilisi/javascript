@@ -7,8 +7,8 @@
 
   1. [ტიპები](#types)
   1. [ობიექტები](#objects)
-  1. [Arrays](#arrays)
-  1. [Strings](#strings)
+  1. [მასივები](#arrays)
+  1. [სტრიქონები](#strings)
   1. [Functions](#functions)
   1. [Properties](#properties)
   1. [Variables](#variables)
@@ -83,7 +83,7 @@
     var item = {};
     ```
 
-  - არ გამოიყენოთ [რეზერვილებული სიტყვები](http://es5.github.io/#x7.6.1) as keys. არ იმუშავებს IE8. [დამატებითი ინფორმაცია](https://github.com/airbnb/javascript/issues/61)
+  - არ გამოიყენოთ [რეზერვილებული სიტყვები](http://es5.github.io/#x7.6.1) როგორც keys. არ იმუშავებს IE8-ში [დამატებითი ინფორმაცია](https://github.com/airbnb/javascript/issues/61)
 
     ```javascript
     // ცუდია
@@ -119,48 +119,48 @@
     ```
     **[[⬆]](#TOC)**
 
-## <a name='arrays'>Arrays</a>
+## <a name='arrays'>მასივები</a>
 
-  - Use the literal syntax for array creation
+  - მასივების შესაქმნელად გამოიყენეთ კვადრატული ფრჩხილები. არ შექმნათ მასივები კონსტრუქტორით
 
     ```javascript
-    // bad
+    // ცუდია
     var items = new Array();
 
-    // good
+    // კარგია
     var items = [];
     ```
 
-  - If you don't know array length use Array#push.
+  - როდესაც არ იცით მასივის სიგრძე, გამოიყენეთ I Array#push.
 
     ```javascript
     var someStack = [];
 
 
-    // bad
+    // ცუდია
     someStack[someStack.length] = 'abracadabra';
 
-    // good
+    // კარგია
     someStack.push('abracadabra');
     ```
 
-  - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - მასივის დასაკოპირებლად გამოიყენეთ Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
         itemsCopy = [],
         i;
 
-    // bad
+    // ცუდია
     for (i = 0; i < len; i++) {
       itemsCopy[i] = items[i];
     }
 
-    // good
+    // კარგია
     itemsCopy = items.slice();
     ```
 
-  - To convert an array-like object to an array, use Array#slice.
+  - მასივის მაგვარი ობიექტის მასივში გადასაკოვნერტებლად გამოიყენეთ Array#slice.
 
     ```javascript
     function trigger() {
@@ -172,32 +172,32 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='strings'>Strings</a>
+## <a name='strings'>სტრიქონები</a>
 
-  - Use single quotes `''` for strings
+  - სტრიქონებისათვის გამოიყენეთ "ცალხაზიანი" ბრჭყალები `''` 
 
     ```javascript
-    // bad
+    // ცუდია
     var name = "Bob Parr";
 
-    // good
+    // კარგია
     var name = 'Bob Parr';
 
-    // bad
+    // ცუდია
     var fullName = "Bob " + this.lastName;
 
-    // good
+    // კარგია
     var fullName = 'Bob ' + this.lastName;
     ```
 
-  - Strings longer than 80 characters should be written across multiple lines using string concatenation.
-  - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
+  - 80 სიმბოლოზე დიდი სტრიქონები უნდა დაიყოს სტრიქონების კონკატენტაციის მეშვეობით.
+  - შენიშვნა: დიდი რაოდენობის კონკატენტაციის მქონე სტრიქონები გავლენას იქონიებს წარმატობაზე. [jsPerf](http://jsperf.com/ya-string-concat) & [განხილვა](https://github.com/airbnb/javascript/issues/40)
 
     ```javascript
-    // bad
+    // ცუდია
     var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
 
-    // bad
+    // ცუდია
     var errorMessage = 'This is a super long error that \
     was thrown because of Batman. \
     When you stop to think about \
@@ -206,7 +206,7 @@
     fast.';
 
 
-    // good
+    // კარგია
     var errorMessage = 'This is a super long error that ' +
       'was thrown because of Batman. ' +
       'When you stop to think about ' +
@@ -215,7 +215,7 @@
       'fast.';
     ```
 
-  - When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
+  - პროგრამულად შექნილი სტრიქონის შემთხვევაში გამოიყენე Array#join კონკატენტაციის ნაცვლად. ძირითადად IE-სათვის: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
 
     ```javascript
     var items,
@@ -225,18 +225,18 @@
 
     messages = [{
         state: 'success',
-        message: 'This one worked.'
+        message: 'ეს მუშაობს.'
     },{
         state: 'success',
-        message: 'This one worked as well.'
+        message: 'ესეც მუშაობს.'
     },{
         state: 'error',
-        message: 'This one did not work.'
+        message: 'ეს არ არის კარგი.'
     }];
 
     length = messages.length;
 
-    // bad
+    // ცუდია
     function inbox(messages) {
       items = '<ul>';
 
@@ -247,7 +247,7 @@
       return items + '</ul>';
     }
 
-    // good
+    // კარგია
     function inbox(messages) {
       items = [];
 
