@@ -15,7 +15,7 @@
   1. [Hoisting](#hoisting)
   1. [Conditional Expressions & Equality](#conditionals)
   1. [Blocks](#blocks)
-  1. [Comments](#comments)
+  1. [კომენტარები](#კომენტარები)
   1. [Whitespace](#whitespace)
   1. [Commas](#commas)
   1. [Semicolons](#semicolons)
@@ -632,12 +632,12 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='comments'>Comments</a>
+## <a name='კომენტარები'>კომენტარები</a>
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+  - გამოიყენეთ `/** ... */` მრავალხაზიანი (ბლოკ) კომენტარებისთვის. თან დაურთეთ აღწერა, მიუთითეთ ყველა ტიპი და მნიშვნელობა პარამეტრებს და დასაბრუნებელ მნიშვნელობებს.
 
     ```javascript
-    // bad
+    // ცუდია
     // make() returns a new element
     // based on the passed in tag name
     //
@@ -650,7 +650,7 @@
       return element;
     }
 
-    // good
+    // კარგია
     /**
      * make() returns a new element
      * based on the passed in tag name
@@ -666,17 +666,17 @@
     }
     ```
 
-  - Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
+  - გამოიყენეთ `//` ცალხაზიანი კომენტარებისთვის. ასეთი კომენტარი დაწერეთ იმის წინა ხაზზე, რის კომენტირებასაც აკეთებთ, ხოლო კომენტარის ხაზის წინ ჩასვით ცარიელი ხაზი.
 
     ```javascript
-    // bad
+    // ცუდია
     var active = true;  // is current tab
 
-    // good
+    // კარგია
     // is current tab
     var active = true;
 
-    // bad
+    // ცუდია
     function getType() {
       console.log('fetching type...');
       // set the default type to 'no type'
@@ -685,7 +685,7 @@
       return type;
     }
 
-    // good
+    // კარგია
     function getType() {
       console.log('fetching type...');
 
@@ -696,7 +696,7 @@
     }
     ```
 
-  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+  - პრეფიქსად დაურთეთ `FIXME` ან `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
 
   - Use `// FIXME:` to annotate problems
 
