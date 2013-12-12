@@ -9,7 +9,7 @@
   1. [ობიექტები](#objects)
   1. [მასივები](#arrays)
   1. [სტრიქონები](#strings)
-  1. [Functions](#functions)
+  1. [ფუნქციები](#functions)
   1. [Properties](#properties)
   1. [Variables](#variables)
   1. [Hoisting](#hoisting)
@@ -262,39 +262,39 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='functions'>Functions</a>
+## <a name='functions'>ფუნქციები</a>
 
-  - Function expressions:
+  - ფუნქციების დეკლარირება:
 
     ```javascript
-    // anonymous function expression
+    // ანონიმური ფუნქციის დეკლარირება
     var anonymous = function() {
       return true;
     };
 
-    // named function expression
+    // სახელიანი ფუნქციის დეკლარირება
     var named = function named() {
       return true;
     };
 
-    // immediately-invoked function expression (IIFE)
+    // მყისიერად შესრულებადი ფუნქციის დეკლარირება (IIFE)
     (function() {
       console.log('Welcome to the Internet. Please follow me.');
     })();
     ```
 
-  - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
-  - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - არასოდეს არ დაადეკლარიროთ ფუნქცია (if, while, etc) კოდის ბლოკში. სასურველია ნაცვლად დეკლარირებული ფუნქცია მიანიჭით `var` ცვლადს. სხვადასხვა ბრაუზერები სხვადასხვა ინტერპრეტირებას უკეთებენ.
+  - **შენიშვნა:** ECMA-262 განსაზღვრავს `block` როგორც გამოსახულებების სიას. ფუნქციის დეკლარირება არ არის გამოსახულება. [იხილეთ ECMA-262'ს შენიშვნები ამ თემასთან დაკავშირებით](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
-    // bad
+    // ცუდია
     if (currentUser) {
       function test() {
         console.log('Nope.');
       }
     }
 
-    // good
+    // კარგია
     var test;
     if (currentUser) {
       test = function test() {
@@ -303,15 +303,15 @@
     }
     ```
 
-  - Never name a parameter `arguments`, this will take precedence over the `arguments` object that is given to every function scope.
+  - არასოდეთ არ დაარქვათ ფუნქვიის პარამერებს სიტყვა `arguments`, რადგანაც ის პრიორიტეტული იქნება ობიექტ `arguments`-ზერომელიც მოცემული ყოველი ფუნქციის ფარგლებში.
 
     ```javascript
-    // bad
+    // ცუდია
     function nope(name, options, arguments) {
       // ...stuff...
     }
 
-    // good
+    // კარგია
     function yup(name, options, args) {
       // ...stuff...
     }
