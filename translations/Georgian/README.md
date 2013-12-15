@@ -10,8 +10,8 @@
   1. [მასივები](#arrays)
   1. [სტრიქონები](#strings)
   1. [ფუნქციები](#functions)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
+  1. [თვისებები](#properties)
+  1. [ცვლადები](#variables)
   1. [Hoisting](#hoisting)
   1. [Conditional Expressions & Equality](#conditionals)
   1. [Blocks](#blocks)
@@ -321,9 +321,9 @@
 
 
 
-## <a name='properties'>Properties</a>
+## <a name='properties'>თვისებები</a>
 
-  - Use dot notation when accessing properties.
+  - გამოიყენეთ წერტილოვანი ნოტაცია როდესაც წვდებით თვისებებს.
 
     ```javascript
     var luke = {
@@ -331,14 +331,14 @@
       age: 28
     };
 
-    // bad
+    // ცუდია
     var isJedi = luke['jedi'];
 
-    // good
+    // კარგია
     var isJedi = luke.jedi;
     ```
 
-  - Use subscript notation `[]` when accessing properties with a variable.
+  - გამოიყენეთ ოთხკუთხედი ფრჩხილები `[]` როდესაც წვდებით  ცვლადიან თვისებებს.
 
     ```javascript
     var luke = {
@@ -356,47 +356,47 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='variables'>Variables</a>
+## <a name='variables'>ცვლადები</a>
 
-  - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+  - მუდამ გამოიყენეთ `var` ცვლადების დეკლარირების დროს. წინააღმდეგ შემთხვევაში ცვლადი მოხდება გლობალურ სახელთა სივრცეში. Captain Planet (http://en.wikipedia.org/wiki/Captain_Planet_and_the_Planeteers/) გვაბრთხილებს ამის შესახებ.
 
     ```javascript
-    // bad
+    // ცუდია
     superPower = new SuperPower();
 
-    // good
+    // კარგია
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration for multiple variables and declare each variable on a newline.
+  - რამოდენიმე ცვლადის დეკლარირებისათვის გამოიყენეთ ერთი `var` და თითოეული ცვლადი დაადეკლარირეთ ახალი ხაზიდან.
 
     ```javascript
-    // bad
+    // ცუდია
     var items = getItems();
     var goSportsTeam = true;
     var dragonball = 'z';
 
-    // good
+    // კარგია
     var items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
     ```
 
-  - Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+  - მსიშვნელობის გარეშიე ცვლადები დაადეკლარირეთ ბოლოში. ეს სასარგებლოა იმ შემთხვევაში, როდესაც მოგვიანებით თქვენ დაგჭირდებათ მიანიჭოთ რაიმე ცვლადი მნიშვნელობა უკვე არსებული ცვლადების საფიძველზე.
 
     ```javascript
-    // bad
+    // ცუდია
     var i, len, dragonball,
         items = getItems(),
         goSportsTeam = true;
 
-    // bad
+    // ცუდია
     var i, items = getItems(),
         dragonball,
         goSportsTeam = true,
         len;
 
-    // good
+    // კარგია
     var items = getItems(),
         goSportsTeam = true,
         dragonball,
@@ -404,10 +404,10 @@
         i;
     ```
 
-  - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+  - ცვლადები მიანიჭეთ მხედველობის სივრცის დასაწყისში. ეს სასარგებლოა იმისათვის რომ ავიცილოთ ცვლადების დეკლარაციის და მხედველობის სივრცეების პრობლემები.
 
     ```javascript
-    // bad
+    // ცუდია
     function() {
       test();
       console.log('doing stuff..');
@@ -423,7 +423,7 @@
       return name;
     }
 
-    // good
+    // კარგია
     function() {
       var name = getName();
 
@@ -439,7 +439,7 @@
       return name;
     }
 
-    // bad
+    // ცუდია
     function() {
       var name = getName();
 
@@ -450,7 +450,7 @@
       return true;
     }
 
-    // good
+    // კარგია
     function() {
       if (!arguments.length) {
         return false;
