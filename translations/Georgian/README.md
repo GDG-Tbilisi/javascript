@@ -357,8 +357,8 @@
 
 
 ## <a name='variables'>ცვლადები</a>
-
-  - მუდამ გამოიყენეთ `var` ცვლადების დეკლარირების დროს. წინააღმდეგ შემთხვევაში ცვლადი მოხდება გლობალურ სახელთა სივრცეში. Captain Planet (http://en.wikipedia.org/wiki/Captain_Planet_and_the_Planeteers/) გვაბრთხილებს ამის შესახებ.
+ 
+  - მუდამ გამოიყენეთ `var` ცვლადების დეკლარირების დროს. წინააღმდეგ შემთხვევაში ცვლადი მოხდება გლობალურ სახელთა სივრცეში. Captain Planet [Captain Planet](http://en.wikipedia.org/wiki/Captain_Planet_and_the_Planeteers/) გვაბრთხილებს ამის შესახებ.
 
     ```javascript
     // ცუდია
